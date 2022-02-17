@@ -190,7 +190,7 @@ server (this would be mapped into an `UPDATE` database statement). This also req
 a `PATCH` request to have a body specifying the fields:
 
 ```ruby
-> HTTParty.post(
+> HTTParty.patch(
     'https://blog.com/articles',
     headers: { 'Content-Type': 'application/json' },
     body: {
