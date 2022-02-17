@@ -202,3 +202,53 @@ a `PATCH` request to have a body specifying the fields:
 `DELETE` methods are used to request the deletion of an existing `article` object in the
 server. This does not require a body, and often only returns a status code with
 an empty body in the response.
+
+## REST API and ArchivesSpace
+
+The ArchivesSpace application exposes a REST API supporting a substantial number
+of operations for the underlying database records. By default, the API responds
+using JSON as the media type. One may please freely explore the API
+documentation available on [https://hudmol.github.io/archivesspace/api/](https://hudmol.github.io/archivesspace/api/).
+
+However, one may not perform any operations until one is authenticated. One may
+authenticate using the following:
+
+```bash
+$ git clone https://github.com/pulibrary/aspace_helpers.git
+$ cd aspace_helpers/
+$ bundle install
+```
+
+Once the Gem dependencies have been successful installed, one may please invoke the following:
+
+```bash
+$ bundle exec irb
+irb(main):001:0> require 'archivesspace/client'
+irb(main):002:0> config = ArchivesSpace::Configuration.new({
+  base_uri: "https://sandbox.archivesspace.org/staff/api/",
+  base_repo: "",
+  username: "admin",
+  password: "admin"
+})
+irb(main):003:0> new_client = ArchivesSpace::Client.new(config)
+irb(main):004:0> client = new_client.login
+```
+
+Further, one may now test against the REST API by requesting a `repository`:
+
+```bash
+irb(main):005:0> response = client.all('repositories')
+irb(main):006:0> repositories = response.to_a
+irb(main):007:0> repositories.length
+=> 25
+irb(main):008:0> puts repositories.first.inspect
+=> {"lock_version"=>3, "repo_code"=>"Stuff", "name"=>"Stuff and things",
+"created_by"=>"admin", "last_modified_by"=>"admin",
+"create_time"=>"2021-11-25T00:56:01Z", "system_mtime"=>"2022-01-13T15:18:08Z",
+"user_mtime"=>"2022-01-13T15:18:08Z", "publish"=>true, "oai_is_disabled"=>false,
+"oai_sets_available"=>"[\"888\",\"889\",\"890\",\"891\",\"892\",\"893\",\"894\",\"895\",\"896\",\"897\",\"898\"]",
+"slug"=>"stuff_1_1_1", "is_slug_auto"=>false, "jsonmodel_type"=>"repository",
+"uri"=>"/repositories/2", "display_string"=>"Stuff and things (Stuff)",
+"agent_representation"=>{"ref"=>"/agents/corporate_entities/1"}}
+```
+
