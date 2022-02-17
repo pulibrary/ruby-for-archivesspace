@@ -1,18 +1,22 @@
 # Ruby for ArchivesSpace
 Workshop for operations against the ArchivesSpace REST API using Ruby
 
+## Getting Started
+
+### Google Cloud Shell
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/pulibrary/ruby-for-archivesspace.git)
 
-## Prerequisites
-- git (release 2.32.0 or later)
-- Ruby (release 2.7.5 or later 2.7.z releases)
-- Bundler (release 2.2.27 or later)
+### Princeton University Library Infrastructure
+
+Please see [the Princeton University Library Infrastructure page](./PULIBRARY_INFRA.md) for instructions on accessing the server environment `ruby-office1.princeton.edu`.
 
 ## Initializing the Environment
 ```bash
 $ git clone https://github.com/pulibrary/aspace_helpers.git
 $ bundle install
 ```
+## Initializing the Environment
+
 
 ## Workshop Sessions
 
