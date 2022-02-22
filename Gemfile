@@ -8,6 +8,8 @@ gem 'archivesspace-client'
 gem 'mechanize'
 gem 'rake'
 gem 'thor'
+gem 'selenium-webdriver'
+gem 'webdrivers', '~> 5.0'
 
 group :development do
   gem "capistrano", "~> 3.16"
