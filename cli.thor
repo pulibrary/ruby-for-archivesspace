@@ -1,5 +1,6 @@
 require "httparty"
 require 'mechanize'
+require "open3"
 require 'pry-byebug'
 require "thor"
 
@@ -19,6 +20,10 @@ module Saml2
       @password = password
     end
 
+    def execute!
+      stdout, status = Open3.capture2("/usr/bin/env openconnect --protocol=gp --user=#{@username} --passwd-on-stdin vpn.princeton.edu", stdin_data: @secret)
+    end
+
     def authenticate!
       agent = Mechanize.new do |a|
         a.redirect_ok = true
@@ -35,24 +40,40 @@ module Saml2
       agent.get(@idp.uri) do |page|
 
         # Submit the IdP authentication form
-        auth_form = page.form_with(action: 'login')
-        auth_form.username = @username
-        auth_form.password = @password
-        mfa_page = auth_form.submit
+        saml_cookies = agent.cookies.select { |cookie| cookie.domain == 'fed.princeton.edu' }
+        if !saml_cookies.empty?
+          if saml_cookies.length == 1
+            @secret = saml_cookies.first.value
+          else
+            raise(NotImplementedError, "Multiple SAML digests stored as cookies: #{saml_cookies}")
+          end
+        elsif page.body.include?('duo_iframe')
+          # Submit the multi-factor authentication form
 
-        # Submit the multi-factor authentication form
-        mfa_form = mfa_page.form_with(action: '/cas/login')
-        mfa_response = mfa_form.submit
+          # Mechanize requires <iframe> interaction first
+          agent.click(page.iframes.first)
+          duo_page = page.iframes.first.content
+          duo_form = duo_page.forms.first
+          duo_form.username = @username
+          duo_form.password = @password
+          results_page = duo_form.submit
+          @secret = agent.cookies.first.value
+
+          binding.pry
+        else
+          raise(NotImplementedError, "Unhandled server response: #{page.uri}")
+        end
 
         # Invoke the `openconnect binary with the SAML digest here
+        execute!
       end
     end
   end
 end
 
 class Aspace < Thor
-  desc "auth", "Authenticate"
-  def auth
+  desc "connect", "Connect to the Princeton University Library network"
+  def connect
     protocol = "https"
     host = "idp.princeton.edu"
     path = "/idp/profile/SAML2/Redirect/SSO"
