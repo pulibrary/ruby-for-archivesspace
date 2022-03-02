@@ -27,7 +27,10 @@ $ bundle install
 - Authentication for ArchivesSpace
 
 ### Session 2 (Introduction to the ArchivesSpace API)
-- (TBD)
+- Overview of aspace_helpers
+- Examples in usage_examples.rb
+- Authenticate with authenticate.rb
+- Our first script
 
 ### Session 3 (Batch Operations with the ArchivesSpace API)
 - (TBD)
