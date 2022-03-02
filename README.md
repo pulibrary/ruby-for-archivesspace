@@ -28,6 +28,7 @@ $ bundle install
 
 ### Session 2 (Introduction to the ArchivesSpace API)
 - Overview of aspace_helpers
+- Methods in helper_methods.rb
 - Examples in usage_examples.rb
 - Authenticate with authenticate.rb
 - Our first script
