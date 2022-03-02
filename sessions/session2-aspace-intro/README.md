@@ -34,7 +34,7 @@ It is required by the helper_methods but is NOT in github for obvious reasons.
 2. Add `authentication.rb` to your .gitignore file so it never gets pushed to github.
 
 ## Let's authenticate and get something back!
-### test.rb
+### create test.rb
     ```
     require 'archivesspace/client'
     require_relative 'helper_methods.rb'
@@ -46,5 +46,6 @@ It is required by the helper_methods but is NOT in github for obvious reasons.
       puts repo['repo_code']
     end
     ```
-    
+--> run with `ruby test.rb`
+
 Now let's get all resources in repo 12 with helper method `get_all_records_for_repo_endpoint`...
