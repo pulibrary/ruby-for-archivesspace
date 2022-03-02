@@ -9,7 +9,7 @@ This file contains an evolving library of methods for things we need to do over 
 
 To use the methods in a script, reference 
 
-`require_relative 'helper_methods.rb'`
+    `require_relative 'helper_methods.rb'`
 
 at the top of the file (make sure to adjust the path).
 
