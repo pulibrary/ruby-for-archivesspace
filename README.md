@@ -30,7 +30,7 @@ $ bundle install
 - Overview of aspace_helpers
 - Methods in helper_methods.rb
 - Examples in usage_examples.rb
-- Authenticate with authenticate.rb
+- Authenticate with authentication.rb
 - Our first script
 
 ### Session 3 (Batch Operations with the ArchivesSpace API)
