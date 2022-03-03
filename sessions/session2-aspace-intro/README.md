@@ -101,3 +101,13 @@ It is required by the helper_methods but is NOT in github for obvious reasons.
     hint: use `[-1]` or `.last`
 - return a single field (e.g. 'title') for the first resource in repo 2
 - return two or more fields (e.g. 'title' and 'uri') for the first resource in repo 2
+
+## Practice
+Get all archival objects for the Andrei Matei COVID-19 Quarantine Photographs
+
+Hint: the collection is in repository 2
+
+Some questions to ask in solving this:
+- What's the endpoint for archival objects?
+- Is there a helper method? If yes, what does it require as input?
+- Can I query for the input needed for the helper method with what I know?
