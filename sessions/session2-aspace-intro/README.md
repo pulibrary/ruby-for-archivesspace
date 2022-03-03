@@ -105,7 +105,7 @@ It is required by the helper_methods but is NOT in github for obvious reasons.
 ## Practice
 Get all archival objects for the Andrei Matei COVID-19 Quarantine Photographs
 
-Hint: the collection is in repository 2
+Hint: the collection is in the sandbox in repository 2
 
 Some questions to ask in solving this:
 - What's the endpoint for archival objects?
