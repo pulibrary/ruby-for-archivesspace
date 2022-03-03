@@ -33,5 +33,7 @@ $ bin/init
 - Our first script
 
 ### Session 3 (Batch Operations with the ArchivesSpace API)
-- (TBD)
+- Loops
+- Arrays and Hashes in ArchivesSpace
+- Gotchas
 
