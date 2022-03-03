@@ -11,9 +11,9 @@ NB: This repository is changing on a daily basis.
 This file contains an evolving library of methods for things we need to do over and over.
 
 To use the methods in a script, reference 
-
-    `require_relative 'helper_methods.rb'`
-
+```
+    require_relative 'helper_methods.rb'
+```
 at the top of the file (make sure to adjust the path).
 
 ## usage_examples.rb
@@ -28,19 +28,19 @@ It is required by the helper_methods but is NOT in github for obvious reasons.
 
 1. Create your own authentication.rb directly in aspace_helpers and populate it with the following code:
 
-    ```
+```
     @sandbox = "https://sandbox.archivesspace.org/staff/api/"
     #@production = "https://aspace.princeton.edu/staff/api"
     #@staging = "https://aspace-staging.princeton.edu/staff/api"
     #change user/pw once you switch from the sandbox to staging or prod:
     @user = "admin"
     @password = "admin"
-    ```
+```
 2. Optional: add `authentication.rb` to your .gitignore file so it never gets pushed to github.
 
 ## Let's authenticate and get something back!
 ### create test.rb
-    ```
+```
     require 'archivesspace/client'
     require_relative 'helper_methods.rb'
 
@@ -50,7 +50,7 @@ It is required by the helper_methods but is NOT in github for obvious reasons.
     repos = client.get('repositories')
     
     #do something with the response
-    ```
+```
 
 ### A few Ruby reminders:
 
