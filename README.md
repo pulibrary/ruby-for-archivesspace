@@ -12,8 +12,7 @@ Please see [the Princeton University Library Infrastructure page](./PULIBRARY_IN
 
 ## Initializing the Environment
 ```bash
-$ git clone https://github.com/pulibrary/aspace_helpers.git
-$ bundle install
+$ bin/init
 ```
 ## Initializing the Environment
 
