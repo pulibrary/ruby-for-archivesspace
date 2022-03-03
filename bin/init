@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -d "$(pwd)/aspace_helpers" ]; then
+  /usr/bin/env git clone https://github.com/pulibrary/aspace_helpers.git
+  cd aspace_helpers/
+  /usr/bin/env bundle install
+  cd -
+fi
