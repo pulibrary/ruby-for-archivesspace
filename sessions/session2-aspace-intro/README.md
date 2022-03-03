@@ -58,7 +58,7 @@ It is required by the helper_methods but is NOT in github for obvious reasons.
 
 - `.parsed` --> unpack a return object
 
-- repos.parsed[0] --> index, a way of getting the nth item in an array
+- repos.parsed[0] --> index, a way of getting the n-th item in an array
 
 - "string #{variable}" --> interpolation, a way to interpret a variable inside a string
 
