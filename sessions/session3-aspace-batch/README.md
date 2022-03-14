@@ -82,8 +82,10 @@ end
 ```
 Check what type of object `repo` is, using `.class`
 
-## Getting the value of a key/value pair
-You can return the value of a key/value pair by referencing the key. This is done by placing it in square brackets:
+## Interlude: Getting the value of a key/value pair
+You can return the value of a key/value pair by referencing the key. This is done by placing it in square brackets.
+
+Here, we loop over an array of hashes and, for each hash, get out the value of the `name` field:
 ```
 #do something with the response
 repos.parsed.each do |repo|
@@ -127,11 +129,18 @@ puts names
 ```
 Check what type of object `names` is, using `.class`
 
-## Accessing a Hash
+## Get the value of a key/value pair that is itself the value of a key/value pair
+What if we want to get the uri of the agent associated with a repository?
+`"agent_representation"=>{"ref"=>"/agents/corporate_entities/7"}}`
 
-### Looking for a field that may not exist
-### Looking for a field that may be nil
+```
+#do something with the response
+uris = repos.parsed.map do |repo| 
+    repo['agent_representation']['ref']
+end
+puts uris
+```
+Try doing the same using the short syntax.
 
-.each
 .select
-.map
+
