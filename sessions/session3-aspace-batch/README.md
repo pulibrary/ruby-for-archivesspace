@@ -34,8 +34,7 @@ To get at single ASpace record out of an array of records, we need to create a l
 - `.class` tells you what type of object something is. 
 - `.each` iterates over an array and returns the array (unless you specify a different return)
 - `.map` iterates over an array and returns the results of the iteration
-- `.flatten` converts an array of arrays to a single flat array
-- `.flatten!` does the same as `.flatten` but changes the data in place
+- `.select` creates a result set based on a filter
 
 Let's get all repository record out again:
 ```
@@ -131,7 +130,9 @@ Check what type of object `names` is, using `.class`
 
 ## Get the value of a key/value pair that is itself the value of a key/value pair
 What if we want to get the uri of the agent associated with a repository?
+
 `"agent_representation"=>{"ref"=>"/agents/corporate_entities/7"}}`
+We can do that by referencing the key in square brackets:
 
 ```
 #do something with the response
@@ -142,5 +143,17 @@ puts uris
 ```
 Try doing the same using the short syntax.
 
-.select
+## Return only certain records
+Let's say we only want to see the names of the repositories that are published.
 
+A `.select` loop allows us to filter on the value of the key/value pair and return only those that match. 
+
+NB: `.select`, like `.each`, returns the original array, so be sure to return output inside the loop.
+
+```
+#do something with the response
+names = repos.parsed.select do |repo| 
+    puts repo['name'] unless repo['publish']==false
+end
+
+```
