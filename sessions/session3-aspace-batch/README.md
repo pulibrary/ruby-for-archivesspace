@@ -148,7 +148,7 @@ Let's say we only want to see the names of the repositories that are published.
 
 A `.select` loop allows us to filter on the value of the key/value pair and return only those that match. 
 
-NB: `.select`, like `.each`, returns the original array, so be sure to return output inside the loop.
+Be sure to return output inside the loop.
 
 ```
 #do something with the response
