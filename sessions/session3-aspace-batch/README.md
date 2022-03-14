@@ -35,6 +35,7 @@ To get at single ASpace record out of an array of records, we need to create a l
 - `.each` iterates over an array and returns the array (unless you specify a different return)
 - `.map` iterates over an array and returns the results of the iteration
 - `.select` creates a result set based on a filter
+- `unless` is the handy inverse of `if`
 
 Let's get all repository record out again:
 ```
@@ -94,7 +95,7 @@ end
 
 ## Loop over an array: `.each` v. `map `
 
-`.each` and `.map` may look the same to you so far. That's because we're forcing an immediate output for each loop. Observe what happens if we return the array after the loops have run. FYI both these methods have a long and a short syntax; I'm exemplifying both here:
+`.each` and `.map` may look the same to you so far. That's because we're forcing an immediate output for each loop. Observe what happens when we return the array after the loops have run. FYI both these methods have a long and a short syntax; I'm exemplifying both here:
 
 `.map` long syntax:
 ```
@@ -127,6 +128,8 @@ names = repos.parsed.map { |repo| repo['name']}
 puts names
 ```
 Check what type of object `names` is, using `.class`
+
+What difference are you seeing when you return the array from `.each` and `.map`, respectively?
 
 ## Get the value of a key/value pair that is itself the value of a key/value pair
 What if we want to get the uri of the agent associated with a repository?
