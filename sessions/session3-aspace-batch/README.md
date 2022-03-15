@@ -27,7 +27,26 @@ We can get all repository records out in one big array of hashes. But how do we 
     "publish"=>true}
     ```
 
-To get at single ASpace record out of an array of records, we need to create a loop. A loop means we take each item in the array in turn and do something with it.
+To get at single ASpace record out of an array of records, we can use the index, e.g. 
+```
+names = ["Will", "Valencia", "Phoebe", "Amy"]
+puts names[0]
+```
+A number of array methods act on the index, including `.first`/`.last`, `.find_index`, `.each_with_index` etc.
+
+`puts names.last`
+
+`puts names[1]`
+
+`puts names.find_index("Phoebe")`
+
+To get the same piec(es) of information for every item in an array, we can "iterate" or "loop" over the array:
+
+```
+names.each_with_index do |name, index|
+    puts "name '#{name}'' is at index #{index}."
+end
+```
 
 ### Review: Get all repository records out at once.
 #### Ruby reminders:
@@ -93,7 +112,7 @@ repos.parsed.each do |repo|
 end
 ```
 
-## Loop over an array: `.each` v. `map `
+## .each v. .map
 
 `.each` and `.map` may look the same to you so far. That's because we're forcing an immediate output for each loop. Observe what happens when we return the array after the loops have run. FYI both these methods have a long and a short syntax; I'm exemplifying both here:
 
@@ -146,7 +165,7 @@ puts uris
 ```
 Try doing the same using the short syntax.
 
-## Return only certain records
+## Return only certain records using .select
 Let's say we only want to see the names of the repositories that are published.
 
 A `.select` loop allows us to filter on the value of the key/value pair and return only those that match. 
