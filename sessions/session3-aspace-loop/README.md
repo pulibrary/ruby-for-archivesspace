@@ -127,7 +127,7 @@ puts names
 `.map` short syntax:
 ```
 #do something with the response
-names = repos.parsed.each { |repo| repo['name']}
+names = repos.parsed.map { |repo| repo['name']}
 puts names
 ```
 Check what type of object `names` is, using `.class`
@@ -143,7 +143,7 @@ puts names
 `.each` short syntax:
 ```
 #do something with the response
-names = repos.parsed.map { |repo| repo['name']}
+names = repos.parsed.each { |repo| repo['name']}
 puts names
 ```
 Check what type of object `names` is, using `.class`
