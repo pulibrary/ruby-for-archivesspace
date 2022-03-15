@@ -166,18 +166,24 @@ puts uris
 Try doing the same using the short syntax.
 
 ### Return only certain records using .select
-Let's say we only want to see the names of the repositories that are published.
+Let's say we only want to see the names of the repositories that have parent instutions.
 
 A `.select` loop allows us to filter on the value of the key/value pair and return only those that match. 
 
-Be sure to return output inside the loop.
-
+Here, we're using the `nil?` method to filter out any records that don't have a `parent_institution_name`. `.nil?` returns a boolean, so this is like saying "unless the statement 'there is no parent_institution_name' is true, give me the value of repo['name']".
 ```
 #do something with the response
 names = repos.parsed.select do |repo| 
     puts repo['name'] unless repo['parent_institution_name'].nil?
 end
+```
 
+In the following example, we're using the `.include?` method to filter on a string value, "Missouri". `.include?` returns a boolean, so this is like saying "unless the statement 'the value of the parent_institution_name field includes the string 'Missouri' is true, give me the value of repo['name']".
+
+```
+names = repos.parsed.select do |repo| 
+        puts repo['name'] unless repo['name'].include?("Missouri")
+    end
 ```
 
 ## Practice
