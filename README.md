@@ -6,14 +6,21 @@ Workshop for operations against the ArchivesSpace REST API using Ruby
 ### Google Cloud Shell
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/pulibrary/ruby-for-archivesspace.git)
 
-### Princeton University Library Infrastructure
-
-Please see [the Princeton University Library Infrastructure page](./PULIBRARY_INFRA.md) for instructions on accessing the server environment `ruby-office1.princeton.edu`.
-
-## Initializing the Environment
+#### Initializing the Environment
 ```bash
 $ bin/init
 ```
+
+#### Resetting the Environment
+Should any repository files be corrupted, or should there be bugs arising from the state of the repository source code files, one may reset the state of the environment with the following:
+
+```bash
+$ bin/reset
+```
+
+### Princeton University Library Infrastructure
+
+Please see [the Princeton University Library Infrastructure page](./PULIBRARY_INFRA.md) for instructions on accessing the server environment `ruby-office1.princeton.edu`.
 
 ## Workshop Sessions
 
