@@ -80,8 +80,7 @@ For kicks, let's examine the response before parsing the response object:
 #do something with the response
 puts repos.class
 ```
-## Loop over an array: `.each` and `.map`
-
+### Loop over an array: `.each` and `.map`
 
 Let's iterate over the parsed response using `.each`:
 ```
@@ -101,7 +100,7 @@ end
 ```
 Check what type of object `repo` is, using `.class`
 
-## Interlude: Getting the value of a key/value pair
+### Interlude: Getting the value of a key/value pair
 You can return the value of a key/value pair by referencing the key. This is done by placing it in square brackets.
 
 Here, we loop over an array of hashes and, for each hash, get out the value of the `name` field:
@@ -112,7 +111,7 @@ repos.parsed.each do |repo|
 end
 ```
 
-## .each v. .map
+### .each v. .map
 
 `.each` and `.map` may look the same to you so far. That's because we're forcing an immediate output for each loop. Observe what happens when we return the array after the loops have run. FYI both these methods have a long and a short syntax; I'm exemplifying both here:
 
@@ -150,7 +149,7 @@ Check what type of object `names` is, using `.class`
 
 What difference are you seeing when you return the array from `.each` and `.map`, respectively?
 
-## Get the value of a key/value pair that is itself the value of a key/value pair
+### Get the value of a key/value pair that is itself the value of a key/value pair
 What if we want to get the uri of the agent associated with a repository?
 
 `"agent_representation"=>{"ref"=>"/agents/corporate_entities/7"}}`
@@ -165,7 +164,7 @@ puts uris
 ```
 Try doing the same using the short syntax.
 
-## Return only certain records using .select
+### Return only certain records using .select
 Let's say we only want to see the names of the repositories that are published.
 
 A `.select` loop allows us to filter on the value of the key/value pair and return only those that match. 
@@ -179,3 +178,10 @@ names = repos.parsed.select do |repo|
 end
 
 ```
+
+## Practice
+1. Log into staging
+    - change the uri and your credentials in authentication.rb
+    - call login with the `@staging` argument
+2. Return all resources in repo 12
+3. Return all resource titles in repo 12
