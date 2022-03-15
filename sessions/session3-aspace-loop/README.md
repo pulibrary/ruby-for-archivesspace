@@ -6,7 +6,7 @@
 - `.select` creates a result set based on a filter
 - `unless` is the handy inverse of `if`
 
-Let's get all repository record out again:
+Let's get all repository records out again:
 ```
 require 'archivesspace/client'
 require_relative 'helper_methods.rb'
