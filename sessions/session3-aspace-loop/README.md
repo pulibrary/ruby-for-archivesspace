@@ -1,3 +1,36 @@
+## Review: Get all repository records out at once.
+### Ruby reminders:
+- `.class` tells you what type of object something is. 
+- `.each` iterates over an array and returns the array (unless you specify a different return)
+- `.map` iterates over an array and returns the results of the iteration
+- `.select` creates a result set based on a filter
+- `unless` is the handy inverse of `if`
+
+Let's get all repository record out again:
+```
+require 'archivesspace/client'
+require_relative 'helper_methods.rb'
+
+#log in
+client = aspace_login(@sandbox)
+#define repositories
+repos = client.get('repositories')
+
+#do something with the response
+puts repos.parsed
+```
+
+Let's examine the response using `.class`:
+```
+#do something with the response
+puts repos.parsed.class
+```
+For kicks, let's examine the response before parsing the response object:
+```
+#do something with the response
+puts repos.class
+```
+
 ## Looping over an array
 ### Get information for each item in an array
 We can get all repository records out in one big array of hashes. But how do we get just certain fields?
@@ -48,38 +81,6 @@ names.each_with_index do |name, index|
 end
 ```
 
-### Review: Get all repository records out at once.
-#### Ruby reminders:
-- `.class` tells you what type of object something is. 
-- `.each` iterates over an array and returns the array (unless you specify a different return)
-- `.map` iterates over an array and returns the results of the iteration
-- `.select` creates a result set based on a filter
-- `unless` is the handy inverse of `if`
-
-Let's get all repository record out again:
-```
-require 'archivesspace/client'
-require_relative 'helper_methods.rb'
-
-#log in
-client = aspace_login(@sandbox)
-#define repositories
-repos = client.get('repositories')
-
-#do something with the response
-puts repos.parsed
-```
-
-Let's examine the response using `.class`:
-```
-#do something with the response
-puts repos.parsed.class
-```
-For kicks, let's examine the response before parsing the response object:
-```
-#do something with the response
-puts repos.class
-```
 ### Loop over an array: `.each` and `.map`
 
 Let's iterate over the parsed response using `.each`:
