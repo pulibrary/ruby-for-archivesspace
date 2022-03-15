@@ -174,9 +174,9 @@ Be sure to return output inside the loop.
 
 ```
 #do something with the response
-    names = repos.parsed.select do |repo| 
-        puts repo['name'] unless repo['parent_institution_name'].nil?
-    end
+names = repos.parsed.select do |repo| 
+    puts repo['name'] unless repo['parent_institution_name'].nil?
+end
 
 ```
 
