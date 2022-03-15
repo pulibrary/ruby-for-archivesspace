@@ -42,6 +42,8 @@ Please see [the Princeton University Library Infrastructure page](./PULIBRARY_IN
 - Our first script
 
 ### Session 3 (Batch Operations with the ArchivesSpace API)
+[_Recording on Zoom Cloud from 03/15/2022_](https://princeton.zoom.us/rec/share/IHSAxvalYoDTsVlGP8mlIM64nhHyvhqfhY6dDURv29gQfrpv3yjSLFkXIWWdiLo5.8m17qwWXlKwiUOXb)
+
 - Loops
 - Arrays and Hashes in ArchivesSpace
 - Gotchas
