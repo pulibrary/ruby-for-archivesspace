@@ -24,7 +24,7 @@ We can get all repository records out in one big array of hashes. But how do we 
     "persistent_id"=>"d16a96d4b221ee8534f1c7ccf43a4a6d",
     "type"=>"physloc",
     "content"=>["mudd"]
-    "publish"=>true}
+    "publish"=>true}]
     ```
 
 To get at single ASpace record out of an array of records, we can use the index, e.g. 
