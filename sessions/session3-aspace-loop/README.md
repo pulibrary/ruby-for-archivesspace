@@ -1,7 +1,7 @@
 ## Review: Get all repository records out at once.
 ### Ruby reminders:
 - `.class` tells you what type of object something is. 
-- `.each` iterates over an array and returns the array (unless you specify a different return)
+- `.each` iterates over an array and returns the array
 - `.map` iterates over an array and returns the results of the iteration
 - `.select` creates a result set based on a filter
 - `unless` is the handy inverse of `if`
