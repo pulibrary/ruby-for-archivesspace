@@ -48,3 +48,9 @@ Please see [the Princeton University Library Infrastructure page](./PULIBRARY_IN
 - Arrays and Hashes in ArchivesSpace
 - Gotchas
 
+### Session 4 (Running Report Templates & Open Q&A)
+
+- Reports in aspace_helpers
+- Read-through
+- Modifying a report template
+- Open Q&A
