@@ -23,10 +23,12 @@ https://github.com/pulibrary/aspace_helpers/tree/main/reports/plain_vanilla_repo
 https://github.com/pulibrary/aspace_helpers/blob/main/reports/plain_vanilla_report_templates/containers_and_restrictions.rb
 
 ### Adapting containers_and_restrictions.rb
+- give the login method an argument
 - eadid = "EA01"
 - resource_ids = [1467]
 - repo = 12
-- comment in the extra line for the collection-level: `ao_uris << ao_ref['ref'] unless ao_ref.dig('level') == 'collection'`
+
+- second pass: comment in the extra line for the collection-level: `ao_uris << ao_ref['ref'] unless ao_ref.dig('level') == 'collection'`
 
 Further practice:
 - [ ] How do I output to CSV only, not to stdtout?
