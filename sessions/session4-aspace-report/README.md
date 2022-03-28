@@ -28,7 +28,7 @@ https://github.com/pulibrary/aspace_helpers/blob/main/reports/plain_vanilla_repo
 - resource_ids = [1467]
 - repo = 12
 
-- second pass: comment in the extra line for the collection-level: `ao_uris << ao_ref['ref'] unless ao_ref.dig('level') == 'collection'`
+- second pass: comment in the bit to exclude the collection-level: `ao_uris << ao_ref['ref'] unless ao_ref.dig('level') == 'collection'`
 
 Further practice:
 - [ ] How do I output to CSV only, not to stdtout?
