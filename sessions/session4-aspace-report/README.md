@@ -1,6 +1,8 @@
 ## Review: Get uri, cid, and title for all archival objects in Graphic Arts
-- helper_methods `get_all_records_for_repo_endpoint`
-- Graphic Arts > repo 11
+- edit `authentication.rb` to point at staging
+- edit the aspace_login method in test.rb to use the staging credentials
+- use helper_methods `get_all_records_for_repo_endpoint`
+- East Asian > repo 12, Graphic Arts > repo 11
 - endpoint: https://archivesspace.github.io/archivesspace/api/?shell#create-an-archival-object
 ```
 require 'archivesspace/client'
@@ -10,7 +12,7 @@ require_relative 'helper_methods.rb'
 aspace_login(@staging)
 
 #define archival objects
-aos = get_all_records_for_repo_endpoint(11, 'archival_objects')
+aos = get_all_records_for_repo_endpoint(12, 'archival_objects')
 
 #print select ao fields to screen
 aos.map { |ao| puts "#{ao['uri']}, #{ao['ref_id']}, #{ao['title']}" }
