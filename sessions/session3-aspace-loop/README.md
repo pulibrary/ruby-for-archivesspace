@@ -6,11 +6,7 @@
 - `.select` creates a result set based on a filter
 - `unless` is the handy inverse of `if`
 
-Let's get all repository records out on staging:
-
-edit `authentication.rb` so it points at staging and has the right credentials enabled
-
-then edit 'test.rb`: 
+Let's get all repository records out again: 
 ```
 require 'archivesspace/client'
 require_relative 'helper_methods.rb'
