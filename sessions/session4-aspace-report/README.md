@@ -1,6 +1,6 @@
 ## Review: Get uri, cid, and title for all archival objects in Graphic Arts
 - edit `authentication.rb` to point at staging
-- edit the aspace_login method in test.rb to use the staging credentials
+- edit the aspace_login method in `test.rb` to use the staging credentials
 - use helper_methods `get_all_records_for_repo_endpoint`
 - East Asian > repo 12, Graphic Arts > repo 11
 - endpoint: https://archivesspace.github.io/archivesspace/api/?shell#create-an-archival-object
