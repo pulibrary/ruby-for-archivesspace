@@ -49,6 +49,7 @@ Please see [the Princeton University Library Infrastructure page](./PULIBRARY_IN
 - Gotchas
 
 ### Session 4 (Running Report Templates & Open Q&A)
+[_Recording on Zoom Cloud from 03/29/2022_](https://princeton.zoom.us/rec/share/DGQIRuUYw5WP7qaZB6siOltZTKEV1mAACzZRyaEG3He6Oow4BiqMksJuWXv_bsr6.vwz8BV4g41v5uOuc)
 
 - Reports in aspace_helpers
 - Read-through
